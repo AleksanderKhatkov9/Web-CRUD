@@ -76,19 +76,9 @@ include 'C:\xampp\htdocs\dashboard\php-web\dao\DaoUser.php';
                     <img src="../resources/image/ava.png" alt="John Doe" class="mr-3 mt-3 rounded-circle"
                          style="width:60px;">
                     <div class="media-body">
-
-                        <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-
-
+                        <h4>Sasha Hatkov <small><i> The web aplication product catalog</i></small></h4>
+                        <p>The web application used is used to store product catalog data</p>
                         <p style="font-size:30px">
-                            &#128512; &#128516; &#128525; &#128400;
-
-                            <!--                    <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>-->
-                            <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut-->
-                            <!--                        labore et dolore magna aliqua.</p>-->
-                            <!--                    <p style="font-size:30px">-->
                             &#128512; &#128516; &#128525; &#128400;
                         </p>
                     </div>
