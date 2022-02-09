@@ -1,41 +1,35 @@
 <?php
 
-/**@todo переписать файл с sql на pdo + */
+/**@todo переписать файл с sql на pdo */
 
+
+global $result_param;
 include "C:/xampp/htdocs/dashboard/php-web/dao/Globals.php";
-
 class DaoUser
 {
-
-    function connect()
+    public function connectPDO()
     {
         try {
-            $connect = Globals::getPDOConnection('phpdb');
+            $conn = Globals::getPDOConnection('phpdb');
         } catch (Exception $e) {
-            echo "<br> Исключение: " . __FILE__ . " " . __LINE__ . " " . $e->getMessage() . "<br>";
+            echo $e;
         }
-        return $connect;
-
+        return $conn;
     }
 
-    function save(User $binUser)
+    function save(User $user)
     {
-        $name = $binUser->getName();
-        $password = $binUser->getPassword();
-        $email = $binUser->getEmail();
-
-        $dao = new DaoUser();
-        $conn = $dao->connect();
-
-        $query = "INSERT INTO phpdb.user (name, password, email) Values (:name, :password, :email)";
+        $name = $user->getName();
+        $password = $user->getPassword();
+        $email = $user->getEmail();
+        $conn = $this->connectPDO();
+        $query = "INSERT INTO phpdb.user (name, password, email) Values (:name, :password,:email)";
         try {
             $res = $conn->prepare($query);
-            $res->bindValue(":name", $name);
-            $res->bindValue(":password", $password);
-            $res->bindValue(":email", $email);
+            $res->bindValue(':name',$name);
+            $res->bindValue(':password',$password);
+            $res->bindValue(':email', $email);
             $res->execute();
-            $num = $res->rowCount();
-            $res = $res->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo "<br> Исключение: " . __FILE__ . " " . __LINE__ . " " . $e->getMessage() . "<br>";
         }
@@ -44,9 +38,9 @@ class DaoUser
 
     public function getAll()
     {
-        $conn = Globals::getPDOConnection('phpdb');
+        $conn = $this->connectPDO();
+        $query = "SELECT * FROM phpdb.user";
         try {
-            $query = "SELECT * FROM phpdb.user";
             $res = $conn->prepare($query);
             $res->execute();
             $num = $res->rowCount();
@@ -58,32 +52,27 @@ class DaoUser
         return $list;
     }
 
-    public function delete($id_del)
+    public function delete($id)
     {
-        $id = $id_del;
-
-        $dao = new DaoUser();
-        $conn = $dao->connect();
-
+        $conn = $this->connectPDO();
         $query = "DELETE FROM phpdb.user WHERE id= :id;";
         try {
             $res = $conn->prepare($query);
             $res->bindValue(":id", $id);
             $res->execute();
+            $num = $res->rowCount();
+            $res = $res->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo "<br> Исключение: " . __FILE__ . " " . __LINE__ . " " . $e->getMessage() . "<br>";
         }
     }
 
 
-    public function getId($getId)
+    public function getId($id)
     {
-        $id = $getId;
-        $dao = new DaoUser();
-        $conn = $dao->connect();
-
-        $query = "SELECT * FROM phpdb.user WHERE id= :id;";
         try {
+            $conn = $this->connectPDO();
+            $query = "SELECT * FROM phpdb.user WHERE id= :id;";
             $res = $conn->prepare($query);
             $res->bindValue(":id", $id);
             $res->execute();
@@ -93,19 +82,15 @@ class DaoUser
         } catch (Exception $e) {
             echo "<br> Исключение: " . __FILE__ . " " . __LINE__ . " " . $e->getMessage() . "<br>";
         }
+
         return $list;
     }
 
 
-    public function update($id_edit, $name_edit, $password_edit, $email_edit)
+    public function update($id, $name, $password, $email)
     {
-        $id = $id_edit;
-        $name = $name_edit;
-        $password = $password_edit;
-        $email = $email_edit;
-        $dao = new DaoUser();
-        $conn = $dao->connect();
 
+        $conn = $this->connectPDO();
         $query = "UPDATE phpdb.user SET name = :name, password = :password, email = :email WHERE id=:id";
         try {
             $res = $conn->prepare($query);
@@ -114,9 +99,10 @@ class DaoUser
             $res->bindValue(":password", $password);
             $res->bindValue(":email", $email);
             $res->execute();
+            $num = $res->rowCount();
+            $res = $res->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo "<br> Исключение: " . __FILE__ . " " . __LINE__ . " " . $e->getMessage() . "<br>";
         }
     }
-
 }

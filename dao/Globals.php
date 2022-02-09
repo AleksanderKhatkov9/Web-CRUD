@@ -17,11 +17,7 @@ class Globals
 
     static $pdo_connection_data = [
 
-        ['phpdb',
-            'root',
-            'sa@12345#',
-            '127.0.0.1']
-    ];
+        ['phpdb','root','sa@12345#','127.0.0.1']];
 
 
     /**
@@ -35,11 +31,15 @@ class Globals
         foreach (self::$pdo_connection_data as &$str)
             if ($str[0] == $name)
                 $dsn = $str[0];
-                $username = $str[1];
-                $password = $str[2];
-                $host = $str[3];
+        $username = $str[1];
+        $password = $str[2];
+        $host = $str[3];
 
-                return new PDO('mysql:host=localhost;dbname=phpdb', $username, $password);
+        return new PDO('mysql:host=localhost;dbname=phpdb', $username, $password);
+
+//        throw new PDOException("Could not found connection with name $name");
+//        return new PDO($str[0], $str[1], $str[2],$str[3], self::$connection_options);
+//        throw new PDOException("Could not found connection with name $name");
     }
 
     /**

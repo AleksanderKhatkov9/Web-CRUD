@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Php web</title>
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!--    <script src="https://ajax.googleapis.com/ajax/ libs/jquery/3.5.1/jquery.min.js"></script>-->
 
-    <link rel="stylesheet" type="text/css" href="../resources/boostrap/bootstrap-4.5.3/css/bootstrap.min.css">
-    <script src="../resources/boostrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
-    <script src="../resources/boostrap/JS/jQuery/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="../resources/boostrap/css/fon.css">
+    <link rel="stylesheet" type="text/css" href="../resources/bootstrap/bootstrap-4.5.3/css/bootstrap.min.css">
+    <script src="../resources/bootstrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+    <script src="../resources/bootstrap/JS/jQuery/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../resources/bootstrap/css/fon.css">
 
 
 </head>
@@ -20,23 +22,15 @@
     </div>
 
     <div class="navbar">
-        <!--        <a href="authorization.php"  title="authorization">Авторизация</a>-->
-        <!--        <a href="add.html" title="Добавить">Создать</a>-->
-        <a href="update.php" title="Информация">Вывод информации</a>
-        <a href="graf.php" title="график">Вывод графика</a>
-        <a href="index.php" title="test">CRUD</a>
-<!--        <a href="../catalog/view/p_list_new.php">List</a>-->
-        <!--        <a href="info.php"  title="info">Info</a>-->
-        <a href="p_list.php">List</a>
-        <a href="TestFile.php">Open file</a>
-
+        <a href="update.php" title="Admin">Admin panel</a>
+        <a href="../catalog/view/form_catalog.php" title="Catalog">Catalog</a>
     </div>
 
 
     <div class="row">
         <div class="container">
             <div class="jumbotron">
-                <form action="../controller/UserAdd.php" method="POST">
+                <form action="../controller/Ajax.php" method="POST" enctype="multipart/form-data">
                     <table class="table">
 
                         <h3 style="color: Blue">Новый сотрудник</h3>
@@ -45,8 +39,8 @@
                         <p>
                             <img src="../resources/image/ava.png" class="rounded"
                                  alt="ava" width="200" height="170">
-
                         </p>
+
                         <tr>
                             <td class="text-primary">Имя</td>
                             <td><input type="text" id="name" name="name" size="30"/></td>
@@ -60,26 +54,25 @@
                             <td class="text-primary">Почта</td>
                             <td><input type="email" id="email" name="email" size="30"/>
                         </tr>
-                        </tr>
                     </table>
                     <button type="submit" class="btn btn-success" name="add" id="add">Отправить</button>
                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="reset" class="btn btn-danger" name="update" id="del">Отмена</button>
                 </form>
 
+
             </div>
+
+
         </div>
         <div class="container mt-3">
             <div class="footer">
                 <div class="media border p-3">
-                    <img src="../resources/image/face.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle"
+                    <img src="../resources/image/ava.png" alt="John Doe" class="mr-3 mt-3 rounded-circle"
                          style="width:60px;">
                     <div class="media-body">
-                        <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-
-
+                        <h4>Sasha Hatkov <small><i> The web aplication product catalog</i></small></h4>
+                        <p>The web application used is used to store product catalog data</p>
                         <p style="font-size:30px">
                             &#128512; &#128516; &#128525; &#128400;
                         </p>

@@ -15,14 +15,16 @@ class User
      * @param $name
      * @param $password
      * @param $email
+     * @param $file
      */
-//    public function __construct($id, $name, $password, $email)
-//    {
-//        $this->id = $id;
-//        $this->name = $name;
-//        $this->password = $password;
-//        $this->email = $email;
-//    }
+
+    public function __construct($id, $name, $password, $email)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->password = $password;
+        $this->email = $email;
+    }
 
     /**
      * @return mixed
@@ -87,5 +89,4 @@ class User
     {
         $this->email = $email;
     }
-
 }

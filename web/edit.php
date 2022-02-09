@@ -3,14 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit</title>
     <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
     <!--    <script src="https://ajax.googleapis.com/ajax/ libs/jquery/3.5.1/jquery.min.js"></script>-->
 
-    <link rel="stylesheet" type="text/css" href="../resources/boostrap/bootstrap-4.5.3/css/bootstrap.min.css">
-    <script src="../resources/boostrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
-    <script src="../resources/boostrap/JS/jQuery/jquery.js"></script>
-    <!--    <script src="../resources/boostrap/JS/js/validEdit.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../resources/bootstrap/bootstrap-4.5.3/css/bootstrap.min.css">
+    <script src="../resources/bootstrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+    <script src="../resources/bootstrap/JS/jQuery/jquery.js"></script>
 
     <style>
         #link {
@@ -21,7 +20,6 @@
     </style>
     <script>
         function showForm() {
-            // document.getElementById("id").hidden = false;
             document.getElementById("id").hidden = true;
         }
     </script>
@@ -49,9 +47,10 @@ $param = $var->getId($id);
 
 <div class="container">
     <div class="jumbotron">
-        <form action="../controller/UserAdd.php" method="POST" onclick="showForm()">
+        <br><br><br>
+        <form action="../controller/Ajax.php" method="POST" onclick="showForm()">
             <table class="table">
-                <h3 class="text-info"> Update
+                <h3 class="text-info"> Edit
                     <tr>
                         <td class="text-primary"></td>
                         <td><input type="hidden" readonly="readonly" id="id" name="id" value="<?php echo $id ?>"
