@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Php web</title>
+
+    <link rel="stylesheet" type="text/css" href="../resources/boostrap/bootstrap-4.5.3/css/bootstrap.min.css">
+    <script src="../resources/boostrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
+    <script src="../resources/boostrap/JS/jQuery/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../resources/boostrap/css/fon.css">
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>My web application</h1>
+        <p>A website created by me: Aleksander Hatkov.</p>
+    </div>
+
+    <div class="navbar">
+        <!--        <a href="authorization.php"  title="authorization">Авторизация</a>-->
+        <!--        <a href="add.html" title="Добавить">Создать</a>-->
+        <a href="update.php" title="Информация">Вывод информации</a>
+        <a href="graf.php" title="график">Вывод графика</a>
+        <a href="index.php" title="test">CRUD</a>
+<!--        <a href="../catalog/view/p_list_new.php">List</a>-->
+        <!--        <a href="info.php"  title="info">Info</a>-->
+        <a href="p_list.php">List</a>
+        <a href="TestFile.php">Open file</a>
+
+    </div>
+
+
+    <div class="row">
+        <div class="container">
+            <div class="jumbotron">
+                <form action="../controller/UserAdd.php" method="POST">
+                    <table class="table">
+
+                        <h3 style="color: Blue">Новый сотрудник</h3>
+                        <br>
+
+                        <p>
+                            <img src="../resources/image/ava.png" class="rounded"
+                                 alt="ava" width="200" height="170">
+
+                        </p>
+                        <tr>
+                            <td class="text-primary">Имя</td>
+                            <td><input type="text" id="name" name="name" size="30"/></td>
+                        </tr>
+                        <tr>
+                            <td class="text-primary">Пароль</td>
+                            <td><input type="password" id="password" name="password" size="30"/>
+                        </tr>
+
+                        <tr>
+                            <td class="text-primary">Почта</td>
+                            <td><input type="email" id="email" name="email" size="30"/>
+                        </tr>
+                        </tr>
+                    </table>
+                    <button type="submit" class="btn btn-success" name="add" id="add">Отправить</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="reset" class="btn btn-danger" name="update" id="del">Отмена</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="footer">
+                <div class="media border p-3">
+                    <img src="../resources/image/face.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle"
+                         style="width:60px;">
+                    <div class="media-body">
+                        <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+
+
+                        <p style="font-size:30px">
+                            &#128512; &#128516; &#128525; &#128400;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+
+</body>
+</html>
