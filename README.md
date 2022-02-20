@@ -3,7 +3,7 @@
 
 
 # Authorization
-![aut](https://user-images.githubusercontent.com/74569011/153262099-d7f7cc92-8770-408b-a071-22cc511dffff.PNG)
+![autor](https://user-images.githubusercontent.com/74569011/154834277-30eafe09-2b00-495d-a7dd-ef39657f1670.JPG)
 
 # Create User
 ![create](https://user-images.githubusercontent.com/74569011/153263463-657f6a72-cb20-4109-b0c1-07363f366049.JPG)
