@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-    <!--    <script src="https://ajax.googleapis.com/ajax/ libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!--        <script src="https://ajax.googleapis.com/ajax/ libs/jquery/3.5.1/jquery.min.js"></script>-->
     <link rel="stylesheet" type="text/css" href="../resources/bootstrap/bootstrap-4.5.3/css/bootstrap.min.css">
     <script src="../resources/bootstrap/bootstrap-4.5.3/js/bootstrap.min.js"></script>
     <script src="../resources/bootstrap/JS/jQuery/jquery.js"></script>
